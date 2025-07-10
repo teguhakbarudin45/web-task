@@ -1,0 +1,17 @@
+.btn-add {
+  background-color: #9929ea;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.btn-add:hover {
+  transform: translateY(0);
+}
+
+.btn-add span {
+  margin-right: 5px;
+}

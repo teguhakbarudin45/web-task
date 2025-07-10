@@ -1,0 +1,36 @@
+.container-aside {
+  padding: 1rem 10px;
+}
+
+.list-aside {
+  margin-top: 20px;
+}
+
+.list-aside li {
+  margin-bottom: 1.3rem;
+  display: flex;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.list-aside li.active {
+  transform: translateX(25px);
+}
+
+.list-aside li.active::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid black;
+  left: -20px;
+  top: 5px;
+}
+
+.list-aside li a {
+  color: black;
+  margin-left: 5px;
+}

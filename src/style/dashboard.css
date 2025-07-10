@@ -1,0 +1,48 @@
+.header-content {
+  padding: 1rem;
+}
+
+.navbar-content {
+  margin-top: 20px;
+}
+
+.list-navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.list-navbar li {
+  position: relative;
+  display: flex;
+}
+
+.list-navbar li::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  bottom: -10px;
+  transition: all ease-in 0.3s;
+}
+
+.list-navbar li.active::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  bottom: -10px;
+}
+
+.list-navbar li img {
+  margin-right: 5px;
+}
+
+.list-navbar li a {
+  color: black;
+}
+
+.main-content {
+  margin-top: 40px;
+}

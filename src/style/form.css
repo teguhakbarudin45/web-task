@@ -1,0 +1,129 @@
+.container-form {
+  margin-top: 30px;
+  position: relative;
+  max-width: 800px;
+  z-index: 9999;
+}
+
+.form {
+  top: -50px;
+  padding: 1rem;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  transform: translate(50px, 0);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.form input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form textarea {
+  width: 100%;
+  padding: 5px;
+  outline: none;
+}
+
+.form select {
+  padding: 10px;
+  outline: none;
+}
+
+.form input,
+textarea,
+select {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.form input:focus,
+textarea:focus,
+select:focus {
+  border: 1.5px solid blue;
+}
+
+.form .form-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  /* padding-right: 20px; */
+}
+
+.form .form-right .btn-tasks {
+  align-self: flex-end;
+}
+
+.btn-save {
+  padding: 0.5rem 2rem;
+  background-color: rgb(30, 40, 187);
+  border-radius: 3px;
+  color: white;
+  margin-left: 20px;
+}
+
+.btn-cancel {
+  padding: 0.5rem 2rem;
+  background-color: rgb(210, 15, 15);
+  border-radius: 3px;
+  color: white;
+}
+
+.list-task-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.task-item {
+  border: 1.5px solid rgb(0, 0, 0);
+  padding: 0.5rem;
+  border-radius: 5px;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.title-task {
+  font-weight: 500;
+}
+
+.description-task {
+  font-weight: 400;
+  font-size: 0.85em;
+}
+
+.date-task {
+  color: rgb(110, 109, 109);
+  font-size: 0.7em;
+  align-self: flex-end;
+}
+
+/* Daftar List */
+.main-task section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date-task img {
+  margin-right: 5px;
+}
