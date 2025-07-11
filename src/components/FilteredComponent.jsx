@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../style/filtered.css";
-const FilteredComponent = ({ currentFilter, onFilterChange }) => {
+const FilteredComponent = ({ onFilterChange }) => {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {

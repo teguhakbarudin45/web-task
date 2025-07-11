@@ -20,6 +20,22 @@ const ArchivePage = () => {
 
   const archivedTasks = tasks.filter((task) => task.archived);
 
+  // handle unarchive task
+  const handleUnarchive = (id) => {
+    const update = tasks.map((task) =>
+      task.id === id ? { ...task, archived: false } : task
+    );
+    setTasks(update);
+    localStorage.setItem("tasks", JSON.stringify(update));
+  };
+
+  // handle trash task
+  const handleDelete = (id) => {
+    const update = tasks.filter((task) => task.id !== id);
+    setTasks(update);
+    localStorage.setItem("tasks", JSON.stringify(update));
+  };
+
   return (
     <section className="container container-dashboard">
       <SidebarComponent />
@@ -47,7 +63,40 @@ const ArchivePage = () => {
                   >
                     {item.priority}
                   </span>
-                  <TaskActionsMenu />
+                  <div
+                    style={{
+                      display: "inline-flex",
+                      gap: "0.5rem",
+                      marginLeft: "0.5rem",
+                    }}
+                  >
+                    <button
+                      onClick={() => handleUnarchive(item.id)}
+                      style={{
+                        background: "#4caf50",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        padding: "4px 8px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Unarchive
+                    </button>
+                    <button
+                      onClick={() => handleDelete(item.id)}
+                      style={{
+                        background: "#f44336",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        padding: "4px 8px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Trash
+                    </button>
+                  </div>
                 </section>
                 <h2 className="title-task">{item.title}</h2>
                 <p className="description-task">{item.description}</p>

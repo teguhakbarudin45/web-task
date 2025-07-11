@@ -110,7 +110,7 @@ const TaskComponent = () => {
           </li>
           {/* Filtered Component */}
           <FilteredComponent
-            currentFilter={filter}
+            // currentFilter={filter}
             onFilterChange={setFilter}
           />
         </ul>
