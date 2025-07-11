@@ -1,7 +1,7 @@
 import "../style/taskList.css";
 import FormTask from "../components/FormTask";
 import getPriorityColor from "../utils/priotityColor";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import TaskActionsMenu from "./TaskActionsMenu";
 import FilteredComponent from "./FilteredComponent";
 
@@ -45,8 +45,8 @@ const TaskComponent = () => {
 
     if (editingIndex !== null) {
       // mode edit
-      const updatedTask = tasks.map((task, i) =>
-        i === editingIndex ? formData : task
+      const updatedTask = tasks.map((task) =>
+        task.id === editingIndex ? formData : task
       );
       setTasks(updatedTask);
     } else {
@@ -67,16 +67,16 @@ const TaskComponent = () => {
   };
 
   // handle delete task
-  const handleDeleteTask = (index) => {
-    const updateTask = tasks.filter((_, i) => i !== index);
+  const handleDeleteTask = (id) => {
+    const updateTask = tasks.filter((task) => task.id !== id);
 
     setTasks(updateTask);
   };
 
   // handle edit task
-  const handleEditTask = (index) => {
+  const handleEditTask = (id) => {
     // Ngambil data yang mau di edit
-    const editTask = tasks[index];
+    const editTask = tasks.find((task) => task.id === id);
 
     // isi form dengan data task
     setFormData(editTask);
@@ -85,17 +85,17 @@ const TaskComponent = () => {
     setShowForm(true);
 
     // menyimpan data yang sudah di edit
-    setEditingIndex(index);
+    setEditingIndex(id);
   };
 
   // Handle Archive
-  const handleArchiveTask = (index) => {
-    const updateTasks = tasks.map(
-      (task, i) => (i === index ? { ...task, archived: true } : task),
-      console.log("Berhasil di archive kan " + index)
+  const handleArchiveTask = (id) => {
+    const updateTasks = tasks.map((task) =>
+      task.id === id ? { ...task, archived: true } : task
     );
 
     setTasks(updateTasks);
+    localStorage.setItem("tasks", JSON.stringify(updateTasks));
   };
 
   return (
@@ -164,9 +164,9 @@ const TaskComponent = () => {
                     </span>
 
                     <TaskActionsMenu
-                      onEdit={() => handleEditTask(index)}
-                      onArchive={() => handleArchiveTask(index)}
-                      onDelete={() => handleDeleteTask(index)}
+                      onEdit={() => handleEditTask(item.id)}
+                      onArchive={() => handleArchiveTask(item.id)}
+                      onDelete={() => handleDeleteTask(item.id)}
                     />
                   </section>
                   <h2 className="title-task">{item.title}</h2>

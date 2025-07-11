@@ -1,0 +1,13 @@
+.card {
+  border: 1.5px solid black;
+  margin-bottom: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  line-height: 1.7;
+}
+
+.card section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
