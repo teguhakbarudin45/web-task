@@ -20,6 +20,7 @@ const TaskComponent = () => {
     date: "",
     priority: "",
     archived: false,
+    trashed: false,
   });
   const [editingIndex, setEditingIndex] = useState(null);
   const [filter, setFilter] = useState("All");
@@ -61,6 +62,7 @@ const TaskComponent = () => {
       date: "",
       priority: "",
       archived: false,
+      trashed: false,
     });
     setEditingIndex(null);
     setShowForm(false);
@@ -68,9 +70,13 @@ const TaskComponent = () => {
 
   // handle delete task
   const handleDeleteTask = (id) => {
-    const updateTask = tasks.filter((task) => task.id !== id);
+    const updateTasks = tasks.map((task) =>
+      task.id === id ? { ...task, trashed: true } : task
+    );
 
-    setTasks(updateTask);
+    console.log(updateTasks);
+    setTasks(updateTasks);
+    localStorage.setItem("tasks", JSON.stringify(updateTasks));
   };
 
   // handle edit task
@@ -110,7 +116,7 @@ const TaskComponent = () => {
           </li>
           {/* Filtered Component */}
           <FilteredComponent
-            // currentFilter={filter}
+            currentFilter={filter}
             onFilterChange={setFilter}
           />
         </ul>
@@ -139,6 +145,7 @@ const TaskComponent = () => {
       {/* Daftar List */}
       <section className="list-task-container">
         {tasks
+          .filter((task) => !task.archived && !task.trashed)
           .filter((task) => {
             if (filter === "All") return true;
             return task.priority === filter;

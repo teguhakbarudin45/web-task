@@ -1,9 +1,9 @@
 import { Link, useLocation, NavLink } from "react-router";
 import "../style/sidebar.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 const SidebarComponent = () => {
-  const [activeTab, isActiveTab] = useState("dashboard");
+  // const [activeTab, isActiveTab] = useState("dashboard");
 
   const location = useLocation();
   const currentPath = location.pathname;
@@ -46,10 +46,7 @@ const SidebarComponent = () => {
             </span>
             <Link to={"/archive"}>Archive</Link>
           </li>
-          <li
-            className={activeTab === "trash" ? "active" : ""}
-            onClick={() => isActiveTab("trash")}
-          >
+          <li className={currentPath === "/trash" ? "active" : ""}>
             <span className="icons">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -13,7 +13,7 @@ const TaskActionsMenu = ({ onEdit, onArchive, onDelete }) => {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div>
       {/* Tombol ⋮ */}
       <button
         onClick={toggleMenu}
@@ -34,18 +34,7 @@ const TaskActionsMenu = ({ onEdit, onArchive, onDelete }) => {
 
       {/* Dropdown menu */}
       {open && (
-        <div
-          style={{
-            position: "absolute",
-            right: 0,
-            top: "28px",
-            background: "white",
-            border: "1px solid #ddd",
-            borderRadius: "4px",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-            zIndex: 10,
-          }}
-        >
+        <div className="dropwdown">
           <button onClick={() => handleAction(onEdit)} style={menuButtonStyle}>
             Edit
           </button>

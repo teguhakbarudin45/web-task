@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../style/filtered.css";
-const FilteredComponent = ({ onFilterChange }) => {
+const FilteredComponent = ({ currentFilter, onFilterChange }) => {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,22 +21,14 @@ const FilteredComponent = ({ onFilterChange }) => {
           src="https://img.icons8.com/ios/50/filter--v1.png"
           alt="filter--v1"
         />
-        <button className="btn btn-filtered">Filtered</button>
+        <button className="btn ">
+          Filtered: <span>{currentFilter}</span>
+        </button>
       </li>
 
       {/* Dropdown menu */}
       {open && (
-        <div
-          style={{
-            position: "absolute",
-            transform: "translate(230px, 60px)",
-            background: "white",
-            border: "1px solid #ddd",
-            borderRadius: "4px",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-            zIndex: 10,
-          }}
-        >
+        <div className="dropdown">
           <button
             className="btn-high"
             style={menuButtonStyle}

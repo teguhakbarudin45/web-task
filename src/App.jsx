@@ -1,6 +1,6 @@
-import SidebarComponent from "./components/SidebarComponent";
 import ArchivePage from "./pages/ArchivePage";
 import DashboardPage from "./pages/DashboardPage";
+import TrashPage from "./pages/TrashPage";
 import "./style/global.css";
 import { BrowserRouter, Routes, Route } from "react-router";
 
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/archive" element={<ArchivePage />} />
+        <Route path="/trash" element={<TrashPage />} />
       </Routes>
     </BrowserRouter>
   );
