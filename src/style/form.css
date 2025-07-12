@@ -86,10 +86,6 @@ select:focus {
 
 .list-task-container {
   margin-top: 2rem;
-  display: grid;
-  grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 340px));
-  gap: 1rem;
 }
 
 .task-item {
@@ -100,10 +96,8 @@ select:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 340px;
   width: 100%;
-  box-sizing: border-box;
-  /* max-height: 240px; */
+  margin-bottom: 1rem;
 }
 
 .title-task {

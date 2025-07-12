@@ -1,18 +1,61 @@
-.calendar-todo-list {
+.container-calender {
+  width: 100%;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.3rem;
+  font-weight: 500;
+}
+
+.calendar-header span {
+  font-size: 2em;
+}
+
+.calendar-header button {
+  font-weight: 500;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-rows: repeat(7, 85px);
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day-name,
+.calendar-cell {
+  text-align: center;
+  padding: 0.5rem;
+  /* border: 1px solid black; */
+}
+
+.calendar-cell {
+  cursor: pointer;
+}
+
+.calendar-cell.selected {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  margin: 0 5px;
+}
+
+.calendar-selected {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.calender-activity {
+  font-weight: bold;
+}
+.activity-list li {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.calendar-task {
+  font-size: 0.7em;
   text-align: left;
-  padding: 0;
-  list-style: none;
-}
-
-.calendar-todo-list li {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.calendar-todo-item-badge {
-  vertical-align: top;
-  margin-top: 8px;
-  width: 6px;
-  height: 6px;
 }

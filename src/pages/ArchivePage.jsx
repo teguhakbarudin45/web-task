@@ -54,7 +54,9 @@ const ArchivePage = () => {
           />
 
           {archivedTasks.length === 0 ? (
-            <h2>Tidak ada tugas yang di archive kan</h2>
+            <h2 className="title__empty">
+              Tidak ada tugas yang di archive kan
+            </h2>
           ) : (
             archivedTasks
               .filter((task) => {
