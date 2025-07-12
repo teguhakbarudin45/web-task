@@ -21,14 +21,14 @@ const FilteredComponent = ({ currentFilter, onFilterChange }) => {
           src="https://img.icons8.com/ios/50/filter--v1.png"
           alt="filter--v1"
         />
-        <button className="btn ">
+        <button className="btn">
           Filtered: <span>{currentFilter}</span>
         </button>
       </li>
 
       {/* Dropdown menu */}
       {open && (
-        <div className="dropdown">
+        <div className="btn-dropdown">
           <button
             className="btn-high"
             style={menuButtonStyle}
