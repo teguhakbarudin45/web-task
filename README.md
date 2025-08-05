@@ -22,16 +22,3 @@ Web ini dibuat untuk mengelola atau manajement tugas dalam kegiatan sehari - har
 # Fitur Kalender
 1. Lihat kalender bulanan
 2. Klik tanggal untuk melihat aktivitas atau tugas yang dijadwalkan pada hari tersebut
-
-
-
-
-
-
-
-
-
-
-
-
-# React + Vite
